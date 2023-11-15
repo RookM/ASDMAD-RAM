@@ -19,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:app/src/main/res/layout/fragment_home.xml
 <<<<<<< HEAD:app/src/main/res/layout/fragment_search.xml
         app:layout_constraintTop_toTopOf="parent">
@@ -37,6 +38,9 @@
 
 >>>>>>> parent of cc74605 (lonely :():app/src/main/res/layout/fragment_search.xml
 =======
+>>>>>>> parent of 5719584 (renamed files)
+=======
+        app:layout_constraintTop_toTopOf="parent" />
 >>>>>>> parent of 5719584 (renamed files)
 =======
         app:layout_constraintTop_toTopOf="parent" />
