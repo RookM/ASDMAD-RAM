@@ -32,6 +32,9 @@
 >>>>>>> parent of 5719584 (renamed files):app/src/main/res/layout/fragment_home.xml
 =======
         app:layout_constraintTop_toTopOf="parent" />
+<<<<<<< HEAD
 
 >>>>>>> parent of cc74605 (lonely :():app/src/main/res/layout/fragment_search.xml
+=======
+>>>>>>> parent of 5719584 (renamed files)
 </androidx.constraintlayout.widget.ConstraintLayout>
