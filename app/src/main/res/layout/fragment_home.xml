@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment" >
+    tools:context=".ui.home.HomeFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="590dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD:app/src/main/res/layout/fragment_home.xml
 <<<<<<< HEAD:app/src/main/res/layout/fragment_search.xml
         app:layout_constraintTop_toTopOf="parent">
 
@@ -26,4 +30,8 @@
 =======
         app:layout_constraintTop_toTopOf="parent" />
 >>>>>>> parent of 5719584 (renamed files):app/src/main/res/layout/fragment_home.xml
+=======
+        app:layout_constraintTop_toTopOf="parent" />
+
+>>>>>>> parent of cc74605 (lonely :():app/src/main/res/layout/fragment_search.xml
 </androidx.constraintlayout.widget.ConstraintLayout>
