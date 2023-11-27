@@ -2,6 +2,9 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -33,5 +36,13 @@ private lateinit var binding: ActivityMainBinding
             R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val editTextVal = findViewById<EditText>(R.id.editTextText)
+
+        val clicked = findViewById<Button>(R.id.button2)
+        clicked.setOnClickListener {
+            Toast.makeText(this,editTextVal.text,Toast.LENGTH_LONG).show()
+        }
+
     }
 }
