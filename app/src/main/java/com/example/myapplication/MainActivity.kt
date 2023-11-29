@@ -12,6 +12,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.databinding.ActivityMainBinding
+import org.json.JSONObject
+import java.io.FileOutputStream
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +22,8 @@ private lateinit var binding: ActivityMainBinding
     fun edit (view: View?) {
 
     }
+
+    private final var filename = "nameFile"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,5 +48,36 @@ private lateinit var binding: ActivityMainBinding
             Toast.makeText(this,editTextVal.text,Toast.LENGTH_LONG).show()
         }
 
+        fun writeToFile(json: JSONObject) {
+            val fileOutputStream: FileOutputStream = openFileOutput(filename, MODE_PRIVATE)
+            val json = json
+            fileOutputStream.write(json.toString().toByteArray())
+            fileOutputStream.close()
+
+            // print file location
+            System.out.println("File location: "  + "/" + filename)
+        }
+
+        fun readFromFile(): String {
+            try {
+                val fileInputStream = openFileInput(filename)
+                val text = fileInputStream.bufferedReader().use { it.readText() }
+                fileInputStream.close()
+                return text
+            } catch (e: Exception) {
+                return ""
+            }
+        }
+
+        fun readJSONFromFile(): JSONObject {
+            try {
+                val fileInputStream = openFileInput(filename)
+                val text = fileInputStream.bufferedReader().use { it.readText() }
+                fileInputStream.close()
+                return JSONObject(text)
+            } catch (e: Exception) {
+                return JSONObject()
+            }
+        }
     }
 }
