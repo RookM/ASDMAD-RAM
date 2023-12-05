@@ -41,9 +41,9 @@ private lateinit var binding: ActivityMainBinding
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val editTextVal = findViewById<EditText>(R.id.editTextText)
+        val editTextVal = findViewById<EditText>(R.id.editTextText3)
 
-        val clicked = findViewById<Button>(R.id.button2)
+        val clicked = findViewById<Button>(R.id.button)
         clicked.setOnClickListener {
             Toast.makeText(this,editTextVal.text,Toast.LENGTH_LONG).show()
         }

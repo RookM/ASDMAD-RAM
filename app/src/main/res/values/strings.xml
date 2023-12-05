@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">School Portfolio</string>
-    <string name="title_home">Search</string>
-    <string name="title_dashboard">Profile</string>
-    <string name="title_notifications">Settings</string>
+    <string name="title_home">Sign In</string>
+    <string name="title_dashboard">Search</string>
+    <string name="title_notifications">Profile</string>
 </resources>
