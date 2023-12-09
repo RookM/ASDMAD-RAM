@@ -41,8 +41,8 @@ private lateinit var binding: ActivityMainBinding
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val editTextVal = findViewById<EditText>(R.id.editTextText3)
-        val passwordVal = findViewById<EditText>(R.id.editTextTextPassword6)
+        val editTextVal = findViewById<EditText>(R.id.editTextText)
+        val passwordVal = findViewById<EditText>(R.id.editTextTextPassword)
 
         val clicked = findViewById<Button>(R.id.button)
         clicked.setOnClickListener {

@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.837" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editTextText"
         android:layout_width="232dp"
         android:layout_height="63dp"
         android:ems="10"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword6"
+        android:id="@+id/editTextTextPassword"
         android:layout_width="230dp"
         android:layout_height="74dp"
         android:ems="10"
