@@ -41,14 +41,8 @@ private lateinit var binding: ActivityMainBinding
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val usernameVal = findViewById<EditText>(R.id.inputUsername)
-        val passwordVal = findViewById<EditText>(R.id.inputPassword)
-
-        val clicked = findViewById<Button>(R.id.button)
-        clicked.setOnClickListener {
-            Toast.makeText(this,usernameVal.text,Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, passwordVal.text,Toast.LENGTH_LONG).show()
-        }
+        val usernameVal = findViewById<EditText>(R.id.inputUsername).text
+        val passwordVal = findViewById<EditText>(R.id.inputPassword).text
 
         fun writeToFile(json: JSONObject) {
             val fileOutputStream: FileOutputStream = openFileOutput(filename, MODE_PRIVATE)
@@ -60,17 +54,6 @@ private lateinit var binding: ActivityMainBinding
             System.out.println("File location: "  + "/" + filename)
         }
 
-        fun readFromFile(): String {
-            try {
-                val fileInputStream = openFileInput(filename)
-                val text = fileInputStream.bufferedReader().use { it.readText() }
-                fileInputStream.close()
-                return text
-            } catch (e: Exception) {
-                return ""
-            }
-        }
-
         fun readJSONFromFile(): JSONObject {
             try {
                 val fileInputStream = openFileInput(filename)
@@ -80,6 +63,14 @@ private lateinit var binding: ActivityMainBinding
             } catch (e: Exception) {
                 return JSONObject()
             }
+        }
+        val clicked = findViewById<Button>(R.id.button)
+        clicked.setOnClickListener {
+            val jsonObject = JSONObject()
+
+            jsonObject.put("Username", usernameVal)
+            jsonObject.put("Password", passwordVal)
+            writeToFile(jsonObject);
         }
     }
 }
