@@ -41,12 +41,12 @@ private lateinit var binding: ActivityMainBinding
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val editTextVal = findViewById<EditText>(R.id.editTextText)
-        val passwordVal = findViewById<EditText>(R.id.editTextTextPassword)
+        val usernameVal = findViewById<EditText>(R.id.inputUsername)
+        val passwordVal = findViewById<EditText>(R.id.inputPassword)
 
         val clicked = findViewById<Button>(R.id.button)
         clicked.setOnClickListener {
-            Toast.makeText(this,editTextVal.text,Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,usernameVal.text,Toast.LENGTH_SHORT).show()
             Toast.makeText(this, passwordVal.text,Toast.LENGTH_LONG).show()
         }
 
