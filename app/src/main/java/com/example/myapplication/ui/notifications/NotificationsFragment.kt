@@ -27,9 +27,11 @@ private var _binding: FragmentNotificationsBinding? = null
     _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
     val root: View = binding.root
 
-    val textView: TextView = binding.textNotifications
+    val profileNameVal: TextView = binding.profileName
+    val profileUsernameVal: TextView = binding.profileUsername
     notificationsViewModel.text.observe(viewLifecycleOwner) {
-      textView.text = it
+      profileNameVal.text = "hello"
+      profileUsernameVal.text = "hi"
     }
     return root
   }
