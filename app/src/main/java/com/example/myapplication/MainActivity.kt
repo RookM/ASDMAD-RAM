@@ -74,4 +74,8 @@ private lateinit var binding: ActivityMainBinding
             writeToFile(jsonObject);
         }
     }
+    fun getUsernameVal(): String {
+        val unv = findViewById<EditText>(R.id.inputUsername).text.toString()
+        return unv
+    }
 }

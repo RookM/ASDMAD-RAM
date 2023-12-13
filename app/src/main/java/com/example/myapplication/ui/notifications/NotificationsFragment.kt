@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.MainActivity
 import com.example.myapplication.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
@@ -31,7 +32,7 @@ private var _binding: FragmentNotificationsBinding? = null
     val profileUsernameVal: TextView = binding.profileUsername
     notificationsViewModel.text.observe(viewLifecycleOwner) {
       profileNameVal.text = "hello"
-      profileUsernameVal.text = "hi"
+      profileUsernameVal.text = (activity as MainActivity).getUsernameVal()
     }
     return root
   }
