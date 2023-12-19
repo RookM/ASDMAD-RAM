@@ -5,8 +5,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -15,7 +18,7 @@ import com.example.myapplication.databinding.ActivityMainBinding
 import org.json.JSONObject
 import java.io.FileOutputStream
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),DefaultLifecycleObserver {
 
 private lateinit var binding: ActivityMainBinding
 
@@ -26,7 +29,7 @@ private lateinit var binding: ActivityMainBinding
     private final var filename = "nameFile"
     var signedInVal = false
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super<AppCompatActivity>.onCreate(savedInstanceState)
 
      binding = ActivityMainBinding.inflate(layoutInflater)
      setContentView(binding.root)
@@ -67,6 +70,41 @@ private lateinit var binding: ActivityMainBinding
         val clicked = findViewById<Button>(R.id.button)
         clicked.setOnClickListener {
             val jsonObject = JSONObject()
+            jsonObject.put("Username", usernameVal)
+            jsonObject.put("Password", passwordVal)
+            writeToFile(jsonObject);
+            signedInVal = true
+        }
+    }
+
+    override fun onResume(owner: LifecycleOwner) {
+        val usernameVal = findViewById<EditText>(R.id.inputUsername).text
+        val passwordVal = findViewById<EditText>(R.id.inputPassword).text
+
+        fun writeToFile(json: JSONObject) {
+            val fileOutputStream: FileOutputStream = openFileOutput(filename, MODE_PRIVATE)
+            val json = json
+            fileOutputStream.write(json.toString().toByteArray())
+            fileOutputStream.close()
+
+            // print file location
+            System.out.println("File location: "  + "/" + filename)
+        }
+
+        fun readJSONFromFile(): JSONObject {
+            try {
+                val fileInputStream = openFileInput(filename)
+                val text = fileInputStream.bufferedReader().use { it.readText() }
+                fileInputStream.close()
+                return JSONObject(text)
+            } catch (e: Exception) {
+                return JSONObject()
+            }
+        }
+        val clicked = findViewById<Button>(R.id.button)
+        clicked.setOnClickListener {
+            val jsonObject = JSONObject()
+            Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
             jsonObject.put("Username", usernameVal)
             jsonObject.put("Password", passwordVal)
             writeToFile(jsonObject);
