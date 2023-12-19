@@ -30,9 +30,21 @@ private var _binding: FragmentNotificationsBinding? = null
 
     val profileNameVal: TextView = binding.profileName
     val profileUsernameVal: TextView = binding.profileUsername
+    val profileAchieve1Val: TextView = binding.profileAchieve1
+    val profileDesc1Val: TextView = binding.profileDesc1
+    val profileAchieve2Val: TextView = binding.profileAchieve2
+    val profileDesc2Val: TextView = binding.profileDesc2
+    val profileAchieve3Val: TextView = binding.profileAchieve3
+    val profileDesc3Val: TextView = binding.profileDesc3
     notificationsViewModel.text.observe(viewLifecycleOwner) {
-      profileNameVal.text = "hello"
+      profileNameVal.text = "[Input Name]"
       profileUsernameVal.text = (activity as MainActivity).getUsernameVal()
+      profileAchieve1Val.text = "[Input Achievement]"
+      profileDesc1Val.text = "[Input Achievement Description]"
+      profileAchieve2Val.text = "[Input Achievement]"
+      profileDesc2Val.text = "[Input Achievement Description]"
+      profileAchieve3Val.text = "[Input Achievement]"
+      profileDesc3Val.text = "[Input Achievement Description]"
     }
     return root
   }
