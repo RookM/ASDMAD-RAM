@@ -37,7 +37,11 @@ private var _binding: FragmentNotificationsBinding? = null
     val profileAchieve3Val: TextView = binding.profileAchieve3
     val profileDesc3Val: TextView = binding.profileDesc3
     notificationsViewModel.text.observe(viewLifecycleOwner) {
-      profileNameVal.text = (activity as MainActivity).getUsernameVal()
+      if ((activity as MainActivity).getSignedIn()) {
+        profileNameVal.text = (activity as MainActivity).getUsernameVal()
+      } else {
+        profileNameVal.text = "[Input Username]"
+      }
       profileSchoolVal.text = "[Input School]"
       profileAchieve1Val.text = "[Input Achievement]"
       profileDesc1Val.text = "[Input Achievement Description]"

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +24,7 @@ private lateinit var binding: ActivityMainBinding
     }
 
     private final var filename = "nameFile"
-
+    var signedInVal = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -68,14 +67,19 @@ private lateinit var binding: ActivityMainBinding
         val clicked = findViewById<Button>(R.id.button)
         clicked.setOnClickListener {
             val jsonObject = JSONObject()
-
             jsonObject.put("Username", usernameVal)
             jsonObject.put("Password", passwordVal)
             writeToFile(jsonObject);
+            signedInVal = true
         }
     }
+
     fun getUsernameVal(): String {
-        val unv = findViewById<EditText>(R.id.inputUsername).text.toString()
-        return unv
+        return findViewById<EditText>(R.id.inputUsername).text.toString()
+    }
+
+    fun getSignedIn(): Boolean {
+        Toast.makeText(this, signedInVal.toString(), Toast.LENGTH_SHORT).show()
+        return signedInVal
     }
 }
