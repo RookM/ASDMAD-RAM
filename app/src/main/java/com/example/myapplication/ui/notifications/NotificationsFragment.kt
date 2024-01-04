@@ -38,17 +38,28 @@ private var _binding: FragmentNotificationsBinding? = null
     val profileDesc3Val: TextView = binding.profileDesc3
     notificationsViewModel.text.observe(viewLifecycleOwner) {
       if ((activity as MainActivity).getSignedIn()) {
-        profileNameVal.text = (activity as MainActivity).getUsernameVal()
+        if ((activity as MainActivity).getUsernameVal().equals("Alex")) {
+          profileNameVal.text = "Alex Cheng"
+          profileSchoolVal.text = "Academy for Information Technology"
+          profileAchieve1Val.text = "Tech Intern"
+          profileDesc1Val.text = "Tech Jones"
+          profileAchieve2Val.text = "Black Belt Taekwondo"
+          profileDesc2Val.text = "I could take 5 guys"
+          profileAchieve3Val.text = "Piano Diploma"
+          profileDesc3Val.text = "Fastest fingers in the West"
+        } else {
+          profileNameVal.text = (activity as MainActivity).getUsernameVal()
+        }
       } else {
         profileNameVal.text = "[Input Username]"
+        profileSchoolVal.text = "[Input School]"
+        profileAchieve1Val.text = "[Input Achievement]"
+        profileDesc1Val.text = "[Input Achievement Description]"
+        profileAchieve2Val.text = "[Input Achievement]"
+        profileDesc2Val.text = "[Input Achievement Description]"
+        profileAchieve3Val.text = "[Input Achievement]"
+        profileDesc3Val.text = "[Input Achievement Description]"
       }
-      profileSchoolVal.text = "[Input School]"
-      profileAchieve1Val.text = "[Input Achievement]"
-      profileDesc1Val.text = "[Input Achievement Description]"
-      profileAchieve2Val.text = "[Input Achievement]"
-      profileDesc2Val.text = "[Input Achievement Description]"
-      profileAchieve3Val.text = "[Input Achievement]"
-      profileDesc3Val.text = "[Input Achievement Description]"
     }
     return root
   }
