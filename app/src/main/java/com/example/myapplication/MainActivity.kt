@@ -39,6 +39,8 @@ private lateinit var binding: ActivityMainBinding
 
     private final var filename = "nameFile"
     var signedInVal = false
+    var whoView = "None"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -86,6 +88,27 @@ private lateinit var binding: ActivityMainBinding
             writeToFile(jsonObject);
             signedInVal = true
         }
+
+//        val clickedAlex = findViewById<Button>(R.id.alexButton)
+//        clickedAlex.setOnClickListener {
+//            whoView = "Alex"
+//        }
+//        val clickedMaire = findViewById<Button>(R.id.maireButton)
+//        clickedMaire.setOnClickListener {
+//            whoView = "Maire"
+//        }
+//        val clickedArav = findViewById<Button>(R.id.aravButton)
+//        clickedArav.setOnClickListener {
+//            whoView = "Arav"
+//        }
+//        val clickedRook = findViewById<Button>(R.id.rookButton)
+//        clickedRook.setOnClickListener {
+//            whoView = "Rook"
+//        }
+//        val clickedIsabella = findViewById<Button>(R.id.isabellaButton)
+//        clickedIsabella.setOnClickListener {
+//            whoView = "Isabella"
+//        }
     }
 
     fun getUsernameVal(): String {
@@ -96,4 +119,8 @@ private lateinit var binding: ActivityMainBinding
         Toast.makeText(this, signedInVal.toString(), Toast.LENGTH_SHORT).show()
         return signedInVal
     }
+
+//    fun getWho(): String {
+//        return whoView
+//    }
 }
