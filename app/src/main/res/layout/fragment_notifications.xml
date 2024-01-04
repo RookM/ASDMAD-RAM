@@ -45,9 +45,7 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:inputType="text"
-        android:cursorVisible="false"
-        android:focusable="false"
-        android:text="Username"
+        android:text="School"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +85,7 @@
         app:layout_constraintVertical_bias="0.464" />
 
     <EditText
-        android:id="@+id/profileDesc1"
+        android:id="@+id/profileAchieve2"
         android:layout_width="348dp"
         android:layout_height="32dp"
         android:inputType="text"
@@ -104,7 +102,7 @@
         app:layout_constraintVertical_bias="0.612" />
 
     <EditText
-        android:id="@+id/profileAchieve2"
+        android:id="@+id/profileAchieve3"
         android:layout_width="348dp"
         android:layout_height="32dp"
         android:inputType="text"
@@ -121,7 +119,7 @@
         app:layout_constraintVertical_bias="0.763" />
 
     <EditText
-        android:id="@+id/profileDesc2"
+        android:id="@+id/profileDesc1"
         android:layout_width="348dp"
         android:layout_height="58dp"
         android:background="@null"
@@ -137,7 +135,7 @@
         app:layout_constraintVertical_bias="0.53" />
 
     <EditText
-        android:id="@+id/profileAchieve3"
+        android:id="@+id/profileDesc2"
         android:layout_width="348dp"
         android:layout_height="58dp"
         android:background="@null"
