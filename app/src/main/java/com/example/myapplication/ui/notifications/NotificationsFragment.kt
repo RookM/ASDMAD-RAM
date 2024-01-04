@@ -53,6 +53,8 @@ private var _binding: FragmentNotificationsBinding? = null
       } else {
         profileNameVal.text = "[Input Username]"
         profileSchoolVal.text = "[Input School]"
+//        profileSchoolVal.isCursorVisible = false
+//        profileSchoolVal.isFocusable = false
         profileAchieve1Val.text = "[Input Achievement]"
         profileDesc1Val.text = "[Input Achievement Description]"
         profileAchieve2Val.text = "[Input Achievement]"
