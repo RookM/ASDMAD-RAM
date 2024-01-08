@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.MainActivity
 import com.example.myapplication.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -25,6 +26,7 @@ private var _binding: FragmentDashboardBinding? = null
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 
     _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+      (activity as MainActivity).getWho()
     val root: View = binding.root
     return root
   }

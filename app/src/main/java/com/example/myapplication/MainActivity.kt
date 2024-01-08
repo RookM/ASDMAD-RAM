@@ -111,6 +111,67 @@ private lateinit var binding: ActivityMainBinding
 //        }
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val usernameVal = findViewById<EditText>(R.id.inputUsername).text
+        val passwordVal = findViewById<EditText>(R.id.inputPassword).text
+
+        fun writeToFile(json: JSONObject) {
+            val fileOutputStream: FileOutputStream = openFileOutput(filename, MODE_PRIVATE)
+            val json = json
+            fileOutputStream.write(json.toString().toByteArray())
+            fileOutputStream.close()
+
+            // print file location
+            System.out.println("File location: "  + "/" + filename)
+        }
+
+        fun readJSONFromFile(): JSONObject {
+            try {
+                val fileInputStream = openFileInput(filename)
+                val text = fileInputStream.bufferedReader().use { it.readText() }
+                fileInputStream.close()
+                return JSONObject(text)
+            } catch (e: Exception) {
+                return JSONObject()
+            }
+        }
+        val clicked = findViewById<Button>(R.id.button)
+        clicked.setOnClickListener {
+            val jsonObject = JSONObject()
+            jsonObject.put("Username", usernameVal)
+            jsonObject.put("Password", passwordVal)
+            writeToFile(jsonObject);
+            signedInVal = true
+        }
+        val clickedAlex = findViewById<Button>(R.id.alexButton)
+        clickedAlex.setOnClickListener {
+            whoView = "Alex"
+        }
+        val clickedMaire = findViewById<Button>(R.id.maireButton)
+        clickedMaire.setOnClickListener {
+            whoView = "Maire"
+        }
+        val clickedArav = findViewById<Button>(R.id.aravButton)
+        clickedArav.setOnClickListener {
+            whoView = "Arav"
+        }
+        val clickedRook = findViewById<Button>(R.id.rookButton)
+        clickedRook.setOnClickListener {
+            whoView = "Rook"
+        }
+        val clickedIsabella = findViewById<Button>(R.id.isabellaButton)
+        clickedIsabella.setOnClickListener {
+            whoView = "Isabella"
+        }
+
+
+
+
+
+
+
+    }
     fun getUsernameVal(): String {
         return findViewById<EditText>(R.id.inputUsername).text.toString()
     }
@@ -120,7 +181,8 @@ private lateinit var binding: ActivityMainBinding
         return signedInVal
     }
 
-//    fun getWho(): String {
-//        return whoView
-//    }
+    fun getWho(): String {
+        Toast.makeText(this, whoView, Toast.LENGTH_SHORT).show()
+        return whoView
+    }
 }
