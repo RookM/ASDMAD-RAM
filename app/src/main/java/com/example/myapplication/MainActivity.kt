@@ -144,35 +144,31 @@ private lateinit var binding: ActivityMainBinding
             writeToFile(jsonObject);
             signedInVal = true
         }
-        val clickedAlex = findViewById<Button>(R.id.alexButton)
-        clickedAlex.setOnClickListener {
-            whoView = "Alex"
-        }
-        val clickedMaire = findViewById<Button>(R.id.maireButton)
-        clickedMaire.setOnClickListener {
-            whoView = "Maire"
-        }
-        val clickedArav = findViewById<Button>(R.id.aravButton)
-        clickedArav.setOnClickListener {
-            whoView = "Arav"
-        }
-        val clickedRook = findViewById<Button>(R.id.rookButton)
-        clickedRook.setOnClickListener {
-            whoView = "Rook"
-        }
-        val clickedIsabella = findViewById<Button>(R.id.isabellaButton)
-        clickedIsabella.setOnClickListener {
-            whoView = "Isabella"
-        }
-
-
-
-
-
-
+//        val clickedAlex = findViewById<Button>(R.id.alexButton)
+//        clickedAlex.setOnClickListener {
+//            whoView = "Alex"
+//            Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show()
+//        }
+//        val clickedMaire = findViewById<Button>(R.id.maireButton)
+//        clickedMaire.setOnClickListener {
+//            whoView = "Maire"
+//        }
+//        val clickedArav = findViewById<Button>(R.id.aravButton)
+//        clickedArav.setOnClickListener {
+//            whoView = "Arav"
+//        }
+//        val clickedRook = findViewById<Button>(R.id.rookButton)
+//        clickedRook.setOnClickListener {
+//            whoView = "Rook"
+//        }
+//        val clickedIsabella = findViewById<Button>(R.id.isabellaButton)
+//        clickedIsabella.setOnClickListener {
+//            whoView = "Isabella"
+//        }
 
     }
     fun getUsernameVal(): String {
+        Toast.makeText(this, findViewById<EditText>(R.id.inputUsername).text.toString(), Toast.LENGTH_SHORT).show()
         return findViewById<EditText>(R.id.inputUsername).text.toString()
     }
 
