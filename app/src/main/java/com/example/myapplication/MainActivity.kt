@@ -168,17 +168,17 @@ private lateinit var binding: ActivityMainBinding
 
     }
     fun getUsernameVal(): String {
-        Toast.makeText(this, findViewById<EditText>(R.id.inputUsername).text.toString(), Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, findViewById<EditText>(R.id.inputUsername).text.toString(), Toast.LENGTH_SHORT).show()
         return findViewById<EditText>(R.id.inputUsername).text.toString()
     }
 
     fun getSignedIn(): Boolean {
-        Toast.makeText(this, signedInVal.toString(), Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, signedInVal.toString(), Toast.LENGTH_SHORT).show()
         return signedInVal
     }
 
     fun getWho(): String {
-        Toast.makeText(this, whoView, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, whoView, Toast.LENGTH_SHORT).show()
         return whoView
     }
 }
